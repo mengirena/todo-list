@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended:true})) // parsing url to js object
 app.use(express.json()) // teach express to read json
 
 let db,
-    dbConnectionString = process.env.DB_string,
+    dbConnectionString = process.env.DB_STR,
     dbName = "Todos"
 
 MongoClient.connect(dbConnectionString,{useUnifiedTopology: true})
@@ -20,19 +20,23 @@ MongoClient.connect(dbConnectionString,{useUnifiedTopology: true})
 })
 //create task
 app.post('/createTask',async (request, response)=>{
-    const result = await db.collection("Tasks").insertOne({
-        id: uuidv4(),
-        taskName: request.body.taskName,
-        finished: false,
-        recordTime: new Date()
-    })
-    console.log("post added")
-    response.redirect("/")
+    try{
+        const result = await db.collection("Tasks").insertOne({
+            id: uuidv4(),
+            taskName: request.body.taskName,
+            finished: false,
+            recordTime: new Date()
+        })
+        console.log("post added")
+        response.redirect("/")
+    }catch(err){console.err(err)}
 })
 //get task
 app.get('/', async (request, response)=>{
-    const data = await db.collection("Tasks").find().sort({finished: 1, recordTime: 1}).toArray()
-    response.render('index.ejs', {posts:data})
+    try{
+        const data = await db.collection("Tasks").find().sort({finished: 1, recordTime: 1}).toArray()
+        response.render('index.ejs', {posts:data})
+    }catch(err){console.err(err)}
 })
 
 //delete task
