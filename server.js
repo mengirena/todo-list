@@ -2,9 +2,7 @@ const express = require("express")//require express to help handle API quickly
 const app = express()
 const MongoClient = require("mongodb").MongoClient //require mongodb to talk to the database
 const {v4:uuidv4} = require("uuid")
-
-
-const PORT = 2021
+require("dotenv").config()
 
 app.set("view engine","ejs") // set the view engine using ejs
 app.use(express.static("public"))
@@ -12,7 +10,7 @@ app.use(express.urlencoded({extended:true})) // parsing url to js object
 app.use(express.json()) // teach express to read json
 
 let db,
-    dbConnectionString = "mongodb+srv://demo:demo123@cluster0.ubkgf.mongodb.net/Todos?retryWrites=true&w=majority",
+    dbConnectionString = process.env.DB_string,
     dbName = "Todos"
 
 MongoClient.connect(dbConnectionString,{useUnifiedTopology: true})
