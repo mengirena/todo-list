@@ -7,6 +7,7 @@ This is a todo list. A user can add new tasks, delete tasks, and mark/unmark tas
 ## How It's Made:
 
 **Tech used:** CSS, EJS, JavaScript, Express, MongoDB, Heroku 
+
 ![APIs](https://user-images.githubusercontent.com/51871665/116189542-f4348d00-a6dd-11eb-9b51-bfe83e236d3d.jpeg)
 
 
