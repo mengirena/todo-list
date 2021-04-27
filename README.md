@@ -2,11 +2,12 @@
 This is a todo list. A user can add new tasks, delete tasks, and mark/unmark tasks as complete. The latest task will be added to the top of the list. As long as the task are marked completed, it will be moved below tasks that are not completed. 
 
 **Link to project:** https://irenas-todo-list.herokuapp.com
-
+<img width="698" alt="Screen Shot 2021-04-26 at 5 06 55 PM" src="https://user-images.githubusercontent.com/51871665/116189518-ea128e80-a6dd-11eb-859b-cf2315f6c428.png">
 
 ## How It's Made:
 
 **Tech used:** CSS, EJS, JavaScript, Express, MongoDB, Heroku 
+![APIs](https://user-images.githubusercontent.com/51871665/116189542-f4348d00-a6dd-11eb-9b51-bfe83e236d3d.jpeg)
 
 
 ## Lessons Learned:
