@@ -61,4 +61,4 @@ app.put('/updateCompleteness', async (request, response)=>{
 })
 
 //Listening to the port
-app.listen(process.env.PORT || PORT, ()=>console.log('server\'s running' ))
+app.listen(process.env.PORT, ()=>console.log('server\'s running' ))
