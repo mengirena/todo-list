@@ -25,7 +25,7 @@ To build an app like this todo list, to break down how the client side talks to 
 
 * In the client side `main.js` code,
     * `fetch()` takes in one required argument indicating which resource to fetch and optional customed settings including method, headers, body...etc. The body content type should be aligned as indicated in the headers.
-    * `this` is different from `event` in the eventlistener. `this` refers to the bound eleemnt. 
+    * `this` herer is different from that in the eventlistener. `this` refers to the bound element. 
     * We use `.id` to get the id from an element but we use `.className` to get class names.
 
 * In `.ejs`, we can assign conditional class names to an element. The double quotes should wrap the `<%= value %>`.
